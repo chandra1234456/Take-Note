@@ -2,11 +2,12 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.chandra.coding.takenote"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.chandra.coding.takenote"
@@ -57,5 +58,14 @@ dependencies {
     val navVersion = "2.7.7"
         implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
         implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("androidx.room:room-runtime:2.7.0-alpha05")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
+    kapt("androidx.room:room-compiler:2.7.0-alpha05")
 
 }
