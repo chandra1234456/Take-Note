@@ -27,7 +27,7 @@ class SplashScreenFragment : Fragment() {
 
         // Navigate to the main fragment after a delay
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashScreenFragment_to_homeFragment)
+            //findNavController().navigate(R.id.action_splashScreenFragment_to_homeFragment)
         }, 3000) // 3 seconds delay
     }
 

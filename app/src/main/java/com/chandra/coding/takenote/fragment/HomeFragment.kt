@@ -5,15 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.chandra.coding.takenote.R
+import com.chandra.coding.takenote.adapter.NoteAdapter
+import com.chandra.coding.takenote.data.Note
 import com.chandra.coding.takenote.databinding.FragmentHomeBinding
+import com.chandra.coding.takenote.util.setOnSingleClickListener
 
 
 class HomeFragment : Fragment() {
-
     private lateinit var homeBinding : FragmentHomeBinding
 
     override fun onCreateView(
@@ -21,37 +22,22 @@ class HomeFragment : Fragment() {
         savedInstanceState : Bundle?
                              ) : View {
         homeBinding = FragmentHomeBinding.inflate(layoutInflater)
-        val icons = listOf(homeBinding.layoutMenu.ivHome, homeBinding.layoutMenu.ivArchived, homeBinding.layoutMenu.ivOthers, homeBinding.layoutMenu.ivSettings,homeBinding.layoutMenu.createNote)
-        icons.forEach { icon ->
-            icon.setOnClickListener {
-                toggleIcon(icon,icons)
-            }
+
+        homeBinding.createNote.setOnSingleClickListener {
+            findNavController().navigate(R.id.createNoteFragment)
         }
+
+        homeBinding.recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
+        val notes = listOf(
+                Note("Title 1" , "Content 1") ,
+                Note("Title 2", "Content 2"),
+                Note("Title 3", "Content 3")
+                          )
+
+        homeBinding.recyclerView.adapter = NoteAdapter(notes)
         return homeBinding.root
     }
-    private fun toggleIcon(selectedIcon: ImageView, icons: List<ImageView>) {
-        icons.forEach { icon ->
-            when(selectedIcon){
-                homeBinding.layoutMenu.ivSettings ->{
-                    findNavController().navigate(R.id.settingsFragment)
-                }
-                homeBinding.layoutMenu.createNote ->{
-                    findNavController().navigate(R.id.createNoteFragment)
-                }
-            }
-            val isSelected = icon == selectedIcon
-            icon.background = ContextCompat.getDrawable(
-                    requireContext(),
-                    if (isSelected) R.drawable.circle_background_selected else R.drawable.circle_background_unselected
-                                                       )
-            icon.isSelected = isSelected
-            icon.setColorFilter(
-                    ContextCompat.getColor(
-                            requireContext(),
-                            if (isSelected) R.color.black else R.color.white
-                                          )
-                               )
-        }
-    }
+
 
 }

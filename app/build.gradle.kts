@@ -32,7 +32,7 @@ android {
         enable = true
     }
     dataBinding {
-        enable =true
+        enable = true
     }
 
     compileOptions {
@@ -56,8 +56,8 @@ dependencies {
 
 
     val navVersion = "2.7.7"
-        implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
-        implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
@@ -67,5 +67,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
     kapt("androidx.room:room-compiler:2.7.0-alpha05")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
+
 
 }
