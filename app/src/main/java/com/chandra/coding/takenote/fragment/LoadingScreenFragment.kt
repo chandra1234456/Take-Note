@@ -11,25 +11,18 @@ import androidx.navigation.fragment.findNavController
 import com.chandra.coding.takenote.R
 import com.chandra.coding.takenote.databinding.FragmentSplashScreenBinding
 
-class SplashScreenFragment : Fragment() {
+class LoadingScreenFragment() : Fragment() {
     private lateinit var splashScreenBinding : FragmentSplashScreenBinding
 
     override fun onCreateView(
         inflater : LayoutInflater , container : ViewGroup? ,
         savedInstanceState : Bundle?
                              ) : View {
-        splashScreenBinding =FragmentSplashScreenBinding.inflate(layoutInflater)
-
+        splashScreenBinding = FragmentSplashScreenBinding.inflate(layoutInflater)
+        Handler(Looper.getMainLooper()).postDelayed({
+            findNavController().navigate(R.id.action_loadingScreenFragment_to_nameFragment)
+        } , 2000)
         return splashScreenBinding.root
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // Navigate to the main fragment after a delay
-        Handler(Looper.getMainLooper()).postDelayed({
-            //findNavController().navigate(R.id.action_splashScreenFragment_to_homeFragment)
-        }, 3000) // 3 seconds delay
-    }
-
 
 }

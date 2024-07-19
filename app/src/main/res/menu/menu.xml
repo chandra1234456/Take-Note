@@ -8,8 +8,5 @@
         android:id="@+id/settingsFragment"
         android:title="Profile"
         android:icon="@drawable/ic_settings"/>
-    <item
-        android:id="@+id/settingsFragment1"
-        android:title="Settings"
-        android:icon="@drawable/ic_settings"/>
+
 </menu>

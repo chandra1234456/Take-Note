@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.chandra.coding.takenote.MainActivity
 import com.chandra.coding.takenote.databinding.FragmentSettingsBinding
 
 
