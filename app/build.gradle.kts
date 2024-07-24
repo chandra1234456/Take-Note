@@ -70,5 +70,9 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
 
+    implementation("androidx.palette:palette:1.0.0")
+    implementation("androidx.drawerlayout:drawerlayout:1.1.1")
+
+
 
 }

@@ -2,22 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:background="?attr/colorPrimary"
-    android:padding="16dp"
+    android:layout_height="70dp"
+    android:background="#90A4AE"
+    android:padding="8dp"
     android:gravity="bottom">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_settings"
-        android:contentDescription="Nav Header"/>
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/headerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User Name"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:paddingTop="8dp"/>
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:paddingTop="1dp"/>
 </LinearLayout>

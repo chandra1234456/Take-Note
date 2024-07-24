@@ -22,6 +22,7 @@
     <fragment
         android:id="@+id/createNoteFragment"
         android:name="com.chandra.coding.takenote.fragment.CreateNoteFragment"
+        android:label="Create Note"
         tools:layout="@layout/fragment_create_note">
         <action
             android:id="@+id/action_createNoteFragment_to_homeFragment"

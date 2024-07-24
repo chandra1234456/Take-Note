@@ -14,8 +14,8 @@ import com.chandra.coding.takenote.databinding.FragmentCreateNoteBinding
 
 
 class CreateNoteFragment : Fragment() {
-   private lateinit var createNoteBinding : FragmentCreateNoteBinding
-   private lateinit var  callback :OnBackPressedCallback
+    private lateinit var createNoteBinding : FragmentCreateNoteBinding
+    private lateinit var callback : OnBackPressedCallback
     override fun onCreateView(
         inflater : LayoutInflater , container : ViewGroup? ,
         savedInstanceState : Bundle?
@@ -29,9 +29,8 @@ class CreateNoteFragment : Fragment() {
                 findNavController().navigate(R.id.homeFragment)
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity() , callback)
         return createNoteBinding.root
     }
-
 
 }
